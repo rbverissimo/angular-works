@@ -1,6 +1,12 @@
-<input type="text" [(ngModel)]="title" />
-<h1>{{ title }}</h1>
-<p>Input your name:</p>
-<input type="text" [(ngModel)]="name" />
-<p>{{ name }}</p>
-<app-servers></app-servers>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>{{ title }}</h1>
+      <input type="text" [(ngModel)]="title" />
+      <p>Input your name:</p>
+      <input type="text" [(ngModel)]="name" />
+      <p>{{ name }}</p>
+      <app-servers></app-servers>
+    </div>
+  </div>
+</div>
