@@ -1,3 +1,8 @@
 h1 {
   color: darkblue;
 }
+
+.white-text {
+  font-size: larger;
+  color: white;
+}
