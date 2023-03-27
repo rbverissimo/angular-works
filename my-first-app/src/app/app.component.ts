@@ -16,6 +16,13 @@ import { Component } from '@angular/core';
   ],
 })
 export class AppComponent {
+  showSecret = false;
+  log = [];
   name = '';
   title: any;
+
+  onTogglePassword() {
+    this.showSecret = !this.showSecret;
+    this.log.push(this.log.length + 1);
+  }
 }

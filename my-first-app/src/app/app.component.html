@@ -7,6 +7,11 @@
       <input type="text" [(ngModel)]="name" />
       <p>{{ name }}</p>
       <app-servers></app-servers>
+      <button class="btn btn-primary" (click)="onTogglePassword()">
+        Toggle Password
+      </button>
+      <p *ngIf="showSecret">Secret Password = tuna</p>
+      <div *ngFor="let logItem of log">{{ logItem }}</div>
     </div>
   </div>
 </div>
