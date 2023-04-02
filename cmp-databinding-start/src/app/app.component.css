@@ -1,7 +1,16 @@
+
 .container {
   margin-top: 30px;
+}
+
+.row {
+  background-color: rgb(231, 231, 231);
 }
 
 p {
   color: blue;
 }
+
+.title {
+  color: #2a2a2a
+} 

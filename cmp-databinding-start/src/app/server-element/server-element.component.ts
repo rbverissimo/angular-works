@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServerElementComponent implements OnInit {
 
+  serverElements = [];
+
   constructor() { }
 
   ngOnInit(): void {
