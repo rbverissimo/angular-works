@@ -25,13 +25,13 @@ export class CockiptComponent implements OnInit {
   onAddServer(nameInput: HTMLInputElement) {
     this.serverCreated.emit({
       serverName: nameInput.value, 
-      serverContent: this.serverContentInput.nativeElement});
+      serverContent: this.serverContentInput.nativeElement.value});
   }
 
   onAddBlueprint(nameInput: HTMLInputElement) {
     this.blueprintCreated.emit(
       {serverName: nameInput.value,
-      serverContent: this.serverContentInput.nativeElement})
+      serverContent: this.serverContentInput.nativeElement.value})
   }  
 
 }
