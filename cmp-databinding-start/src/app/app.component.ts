@@ -24,4 +24,11 @@ export class AppComponent {
         content: blueprintData.serverContent
       });
     } 
+
+    onChangeFirst(){
+      this.serverElements[0].name = 'Changed';
+      this.serverElements[1].name = 'Changed';
+      this.serverElements[2].name = 'Changed';
+      this.serverElements[3].name = 'Changed';
+    }
 }

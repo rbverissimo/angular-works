@@ -9,14 +9,16 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsulation }
 })
 export class ServerElementComponent implements OnInit, OnChanges {
 
-  @Input('srvElement') element: {type: string, name: string, content: string}; 
+  @Input('srvElement') element: {type: string, name: string, content: string};
+  @Input() name: string; 
 
   constructor() { 
     console.log('constructor called'); 
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('ngOnChanges called !!! ')
+    console.log('ngOnChanges called !!! ');
+    console.log(changes);
   }
 
   ngOnInit(): void {
