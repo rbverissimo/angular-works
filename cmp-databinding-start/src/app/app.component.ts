@@ -31,4 +31,8 @@ export class AppComponent {
       this.serverElements[2].name = 'Changed';
       this.serverElements[3].name = 'Changed';
     }
+
+    onDestroyFirst(){
+      this.serverElements.splice(0, 1);
+    }
 }

@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -13,7 +13,8 @@ DoCheck,
 AfterContentInit, 
 AfterContentChecked, 
 AfterViewInit, 
-AfterViewChecked {
+AfterViewChecked,
+OnDestroy {
 
   @Input('srvElement') element: {type: string, name: string, content: string};
   @Input() name: string; 
@@ -49,6 +50,10 @@ AfterViewChecked {
 
   ngAfterViewInit(): void {
     console.log('ngAfterViewInit called !!');
+  }
+
+  ngOnDestroy(): void {
+    
   }
 
 }
