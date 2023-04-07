@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -14,14 +14,24 @@ AfterContentInit,
 AfterContentChecked, 
 AfterViewInit, 
 AfterViewChecked,
-OnDestroy {
+OnDestroy,
+ViewChild {
 
   @Input('srvElement') element: {type: string, name: string, content: string};
-  @Input() name: string; 
+  @Input() name: string;
+  @ViewChild('heading', {static: true}) header: ElementRef; 
+  @ContentChild('contentParagraph', {static: true}) paragraph: ElementRef;
 
   constructor() { 
     console.log('constructor called'); 
   }
+  descendants: boolean;
+  emitDistinctChangesOnly: boolean;
+  first: boolean;
+  read: any;
+  isViewQuery: boolean;
+  selector: any;
+  static?: boolean;
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('ngOnChanges called !!! ');
@@ -30,6 +40,8 @@ OnDestroy {
 
   ngOnInit(): void {
     console.log('ngOnInit called!! ');
+    console.log(' Text Content: ' + this.header.nativeElement.textContent);
+    console.log('Content of: ' + this.paragraph.nativeElement.textContent);
   }
 
   ngDoCheck(): void {
@@ -38,6 +50,7 @@ OnDestroy {
 
   ngAfterContentInit(): void {
     console.log('ngAfterContentInit called !!');
+    console.log('Content of: ' + this.paragraph.nativeElement.textContent);
   }
 
   ngAfterContentChecked(): void {
@@ -50,6 +63,7 @@ OnDestroy {
 
   ngAfterViewInit(): void {
     console.log('ngAfterViewInit called !!');
+    console.log(' Text Content: ' + this.header.nativeElement.textContent);
   }
 
   ngOnDestroy(): void {
