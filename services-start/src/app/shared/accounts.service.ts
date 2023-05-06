@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { LoggingService } from "./logging.service";
 
 /* we add Injectable not the service that is going to be injected, but rather WHERE, in which service we want to inject something */
@@ -19,6 +19,8 @@ export class AccountsService {
       status: 'unknown'
     }
   ];
+
+  statusUpdated = new EventEmitter<string>();
 
   constructor(private loggingService: LoggingService) { }
 
