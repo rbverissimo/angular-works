@@ -15,9 +15,9 @@ export class ShoppingListComponent {
   ngOnInit(){
     this.ingredients = this.slService.getIngredients();
 
-    this.slService.ingredientAdded.subscribe(
-      (i: Ingredient) => {
-        this.ingredients.push(i);
+    this.slService.ingredientsChanged.subscribe(
+      (i: Ingredient[]) => {
+        this.ingredients = i;
       }
       );
 
