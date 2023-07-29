@@ -33,7 +33,11 @@ constructor(private slService: ShoppingListService){}
 
 getRecipes() {
       return this.recipes.slice();
-} 
+}
+
+getRecipe(index: number): Recipe {
+      return this.recipes[index];
+}
 
 addIngredientsToShoppingList(ingredients: Ingredient[]){
       this.slService.addIngredients(ingredients);
