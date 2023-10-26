@@ -18,8 +18,9 @@
             id="email" 
             class="form-control"
             ngModel name="email"
-            required email>
+            required email #email="ngModel">
           </div>
+          <span *ngIf="!email.valid && email.touched" style="color: red" class="help-block">Please enter a valid email</span>
         </div>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
